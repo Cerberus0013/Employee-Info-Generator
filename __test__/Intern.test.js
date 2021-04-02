@@ -1,5 +1,5 @@
 
-const intern = require('../lib/Intern')
+const Intern = require('../lib/Intern')
 
 test("to see if the three inputs are valid", () => {
   const intern = new Intern(name, id, email, school);

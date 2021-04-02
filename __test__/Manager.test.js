@@ -1,5 +1,5 @@
 
-const manager = require("../lib/Manager")
+const Manager = require("../lib/Manager")
 
 test("to see if the three inputs are valid", () => {
   const manager = new Manager(name, id, email, officeNumber);

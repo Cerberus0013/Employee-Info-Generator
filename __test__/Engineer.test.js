@@ -1,5 +1,5 @@
 
-const engineer = require('../lib/Engineer')
+const Engineer = require('../lib/Engineer')
 
 
 test("to see if the three inputs are valid", () => {
