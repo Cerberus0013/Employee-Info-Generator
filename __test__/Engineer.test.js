@@ -1,10 +1,12 @@
 
+const engineer = require('../lib/Engineer')
+
 
 test("to see if the three inputs are valid", () => {
-  const employee = new Employee(name, id, email, github);
+  const engineer = new Engineer(name, id, email, github);
 
-  expect(employee.name).toEqual(expect.any(String));
-  expect(employee.id).toEqual(expect.any(String));
-  expect(employee.email).toEqual(expect.any(String));
-  expect(employee.github).toEqual(expect.any(String))
+  expect(engineer.name).toEqual(expect.any(String));
+  expect(engineer.id).toEqual(expect.any(String));
+  expect(engineer.email).toEqual(expect.any(String));
+  expect(engineer.github).toEqual(expect.any(String))
 });
