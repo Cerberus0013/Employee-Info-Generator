@@ -48,7 +48,8 @@ function infoManager() {
       name: "officeNumber",
       message: "What is the Manager's office number?",
     },
-  ]);
+]);
+    addAnother()
 }
 
 function infoEngineer() {
@@ -58,7 +59,10 @@ function infoEngineer() {
       name: "github",
       message: "What is their Github URL?",
     },
-  ]);
+
+    addAnother()
+
+]);
 }
 
 function infoIntern() {
@@ -68,8 +72,36 @@ function infoIntern() {
       name: "school",
       message: "What school do they Attend?",
     },
-  ]);
+
+    
+]);
+
 }
 
+function addAnother(){
+   return inquirer.prompt([
+     {
+       type: "confirm",
+       name: "plusOne",
+       message: "Would you like to add another employee to your list?",
+       default: true
+     }]).then(choice => {
+         if(choice.plusOne){
+         employeeInfo()
+         } else {
+             console.log('Your list has generated')
+         }
+     }); 
+}
+
+
+
+
 employeeInfo()
+       // .then()
+
+     // fs.writeFile('./index.html', empCards, err => {
+
+     // }
+    
 
