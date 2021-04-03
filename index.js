@@ -1,6 +1,7 @@
 // start with a function, that has a drop choice that asks what is their raole
-
+const fs = require("fs")
 const inquirer = require("inquirer");
+const cardGenerator = require('./dist/EmployeeGenerator')
 
 
 
@@ -11,17 +12,43 @@ function employeeInfo() {
         type: "input",
         name: "name",
         message: "What is the employee's name?",
+        validate: (inputName) => {
+        if(inputName){
+        return true;
+      } else {
+        console.log("Please enter the employee's name")
+        return false
+      }
+    },
       },
       {
         type: "input",
         name: "id",
         message: "What is the employee's ID number?",
+        validate: (inputId) => {
+        if(inputId){
+        return true;
+      } else {
+        console.log("Please enter the employee's ID.")
+        return false
+      }
+    },
+
       },
       {
         type: "input",
         name: "email",
         message: "What is the employee's email?",
+        validate: (inputEmail) => {
+        if(inputEmail){
+        return true;
+      } else {
+        console.log("Please enter the employee's Email.")
+        return false
+      }
+    },
       },
+      
 
       {
         type: "list",
@@ -71,6 +98,13 @@ function infoIntern() {
       type: "input",
       name: "school",
       message: "What school do they Attend?",
+      validate: (schoolName) => {
+        if(schoolName){
+        return true;
+      } else {
+        console.log("Please enter the school name.")
+        return false
+      }
     },
 
     
