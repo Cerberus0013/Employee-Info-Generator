@@ -1,11 +1,17 @@
 // start with a function, that has a drop choice that asks what is their raole
 const fs = require("fs")
 const inquirer = require("inquirer");
-const cardGenerator = require('./dist/EmployeeGenerator')
+const empcardGenerator = require('./dist/EmployeeGenerator')
 
 
 
-function employeeInfo() {
+function employeeInfo(employeeData){
+
+
+if(!employeeData){
+  employeeData = {}
+}
+
   return inquirer
     .prompt([
       {
@@ -48,8 +54,6 @@ function employeeInfo() {
       }
     },
       },
-      
-
       {
         type: "list",
         name: "role",
@@ -74,8 +78,16 @@ function infoManager() {
       type: "input",
       name: "officeNumber",
       message: "What is the Manager's office number?",
+      validate: (number) => {
+        if (number) {
+          return true;
+        } else {
+          console.log("Please enter an office number");
+          return false;
+        }
+      },
     },
-]);
+  ]);
     addAnother()
 }
 
@@ -85,11 +97,17 @@ function infoEngineer() {
       type: "input",
       name: "github",
       message: "What is their Github URL?",
+      message: "What school do they Attend?",
+      validate: (githubUrl) => {
+        if (githubUrl) {
+          return true;
+        } else {
+          console.log("Please enter a valid Guthub URL.");
+          return false;
+        }
+      },
     },
-
-    addAnother()
-
-]);
+  ]);
 }
 
 function infoIntern() {
@@ -101,14 +119,15 @@ function infoIntern() {
       validate: (schoolName) => {
         if(schoolName){
         return true;
+        addAnother();
       } else {
         console.log("Please enter the school name.")
         return false
       }
-    },
-
-    
-]);
+    }
+   },
+  
+  ]);
 
 }
 
@@ -124,6 +143,7 @@ function addAnother(){
          employeeInfo()
          } else {
              console.log('Your list has generated')
+             return employee
          }
      }); 
 }
@@ -132,10 +152,12 @@ function addAnother(){
 
 
 employeeInfo()
-       // .then()
+       .then((employeeData) => {
+         console.log(employeeData)
+         const empCards = empcardGenerator(employeeData);
 
-     // fs.writeFile('./index.html', empCards, err => {
-
-     // }
-    
-
+     fs.writeFile('./index.html', empCards, err => {
+        if(err) throw new Error(err);
+        console.log('Employee Cards Generated')
+     });
+  })
