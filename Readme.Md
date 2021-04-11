@@ -8,7 +8,7 @@ N/A for Noded generated HTML
 
 
 ## Purpose
-This is Node program that can generates a HTML from that can take an unlimited amount of emplyee inputs for the number of employees you have in your organization
+This is Node program that can generates a HTML formm that can take an unlimited amount of employee information for the number of employees you have in your organization. it then generates an html page with clickable email and github links.
 
 ## Built With
 HTML,
