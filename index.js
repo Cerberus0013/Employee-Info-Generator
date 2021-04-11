@@ -77,7 +77,7 @@ if (choice.role === "Manager") {
           },
           {
             type: "input",
-            name: "officeNumber",
+            name: "special",
             message: "What is the Manager's office number?",
           },
         ])
@@ -87,7 +87,7 @@ if (choice.role === "Manager") {
               answer.name,
               answer.id,
               answer.email,
-              answer.officeNumber
+              answer.special
             )
           );
           addAnother();
@@ -139,9 +139,9 @@ if (choice.role === "Manager") {
          },
          {
      type: "input",
-     name: "github",
-      message: "What is their Github URL?",
-       message: "What is your Github URL?",
+     name: "special",
+      message: "Please enter your Github name?",
+       message: "Please enter your Github name?",
        validate: (githubUrl) => {
          if (githubUrl) {
            return true;
@@ -158,7 +158,7 @@ if (choice.role === "Manager") {
              answer.name,
              answer.id,
              answer.email,
-             answer.github
+             answer.special
            )
          );
          addAnother();
@@ -210,7 +210,7 @@ function infoIntern() {
       },
       {
       type: "input",
-        name: "school",
+        name: "special",
          message: "What school do they attend?",
          validate: (schoolName) => {
            if (schoolName) {
@@ -224,7 +224,7 @@ function infoIntern() {
     ])
     .then((answer) => {
       employee.push(
-        new Intern(answer.name, answer.id, answer.email, answer.school)
+        new Intern(answer.name, answer.id, answer.email, answer.special)
       );
       addAnother();
     }); //.then(managerData =>  );
@@ -242,24 +242,23 @@ function infoIntern() {
            default: false,
          },
        ])
-       .then((addEmployee) => {
-         if (!addEmployee) {
-           typeOfEmployee()
-         } else {
-            const data = create(employee)
-            
-            
-            console.log(employee)
-            
-           fs.writeFile("./index.html", data, (err) => {
-             if (err) {
-               return;
-             } else {
-               console.log("Employee Document Generated");
-             }
-            })
-         }
-       });
+        .then((data) => {
+          if (data.addEmployee) {
+            typeOfEmployee();
+          } else {
+            const data = create(employee);
+
+            //console.log(employee);
+
+            fs.writeFile("./index.html", data, (err) => {
+              if (err) {
+                return;
+              } else {
+                console.log("Employee Document Generated");
+              }
+            });
+          }
+        });
    };
 
 //console.log(generalEmployee)
