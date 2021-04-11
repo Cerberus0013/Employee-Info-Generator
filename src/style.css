@@ -1,21 +1,51 @@
 * {
-  box-sizing: border-box;
+box-sizing: inherit;
 font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+.title h1 {
+height: 100px;
+margin: 15px;
+text-align: center;
+color:brown;
+background-color: cadetblue;
 }
 
 .card {
   margin: 0 0 20px 0;
-  border: 3px solid blue;
-  background-color: blanchedalmond;
-  
-}
+  }
+
 .card-title {
   color: red;
   background-color: grey ; 
   padding: 2.5%;
-
 }
 
 .card-body {
+ 
   padding: 2.5%;
+  border: 3px solid blue;
+  background-color: blanchedalmond;
 }
+
+body {
+    background-color: white;
+}
+
+.title {
+  text-align: center;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: red;
+    border-radius: .3rem;
+    color: whitesmoke;
+}
+
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgb(38, 117, 236);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    color: whitesmoke;
+}
+
