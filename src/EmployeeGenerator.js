@@ -1,7 +1,7 @@
 const employeeGenerator = (data) => {
   const managerGenerator = (manager) => {
     return `
-  <div class="card employee-card">
+  <div class="card col-sm-3">
     <div class="card-header">
         <h3 class="card-title"> ${manager.getName()}</h3>
         <h4 class="card-title"><i class="fas fa-cogs mr-2"></i>Manager</h4>
@@ -20,7 +20,7 @@ const employeeGenerator = (data) => {
   
   const engineerGenerator = (engineer) => {
     return `
-  <div class="card employee-card">
+  <div class="card col-sm-3">
     <div class="card-header">
         <h3 class="card-title"> ${engineer.getName()}</h3>
         <h4 class="card-title"><i class="fas fa-cogs mr-2"></i>Engineer</h4>
@@ -29,7 +29,7 @@ const employeeGenerator = (data) => {
         <ul class="list-group">
             <li class="list-group-item">ID: ${engineer.getId()}</li>
             <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
-            <li class="list-group-item"> Github: ${engineer.getGithub()}</li>
+            <li class="list-group-item"> <a href="https://github.com/${engineer.getGithub()}" target="_blank" >  Github: ${engineer.getGithub()} </a></li>
         </ul>
     </div>
 </div>
@@ -38,7 +38,7 @@ const employeeGenerator = (data) => {
 }
   const internGenerator = (intern) => {
     return `
-  <div class="card employee-card">
+  <div class="card col-sm-3">
     <div class="card-header">
         <h3 class="card-title"> ${intern.getName()}</h3>
         <h4 class="card-title"><i class="fas fa-cogs mr-2"></i>Intern</h4>
@@ -105,7 +105,7 @@ module.exports = data => {
 </header>
 <div class="container">
 <div class= "row">
-<div class="col-12 d-flex justify-content-center">
+<div class="col-12 d-flex justify-content-center space-between">
 ${employeeGenerator(data)}
 
       </div>

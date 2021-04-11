@@ -140,8 +140,8 @@ if (choice.role === "Manager") {
          {
      type: "input",
      name: "special",
-      message: "What is their Github URL?",
-       message: "What is your Github URL?",
+      message: "Please enter your Github name?",
+       message: "Please enter your Github name?",
        validate: (githubUrl) => {
          if (githubUrl) {
            return true;
