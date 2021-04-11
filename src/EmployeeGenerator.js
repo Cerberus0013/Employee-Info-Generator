@@ -1,23 +1,9 @@
 
 
-function renderManager(){
-
-}
-
-
-function renderEngineer(){
-
-}
-
-function renderIntern(){
-
-}
-
-
 
 
 function generateEmpCards(data){
-`
+return `
 !DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,10 +14,11 @@ function generateEmpCards(data){
 </head>
 <body>
     <section>
-        <h1 class="name">${data.name}</h1>
+        <h1>${data.name}</h1>
         <p>${data.id}</p>
         <p>${data.email}</p>
         <p>${data.role}</p>
+        <p> ${data.officeNumber}</p>
     </section>
     
 </body>
