@@ -22,7 +22,14 @@ return `
         <h1>${data[i].name}</h1>
         <p>${data[i].id}</p>
         <p>${data[i].email}</p>
-        <p> ${data[i].officeNumber}</p>
+        <p> ${data[i].special}</p>
+    </section>
+
+    <section>
+        <h1>${data[1].name}</h1>
+        <p>${data[1].id}</p>
+        <p>${data[1].email}</p>
+        <p> ${data[1].special}</p>
     </section>
     
 </body>
