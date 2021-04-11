@@ -2,41 +2,42 @@
 
 
 
-module.exports = data =>{
 
-console.log(data)
 
-for ( let i =0; i < data.length; i++){
+
+const employeeGenerator = data => {
+
+console.log(data);
+
+for (let i = 0; i < data.length; i++)
 
 return `
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employees5</title>
+     <link rel="stylesheet" href="./src/EmployeeGenerator.js"> 
+    <title>Employees</title>
 </head>
 <body>
-    <section>
-        <h1>${data[i].name}</h1>
-        <p>${data[i].id}</p>
-        <p>${data[i].email}</p>
-        <p> ${data[i].special}</p>
-    </section>
 
-    <section>
-        <h1>${data[1].name}</h1>
-        <p>${data[1].id}</p>
-        <p>${data[1].email}</p>
-        <p> ${data[1].special}</p>
-    </section>
+<header> </header>
+
+<div class="card" style="width: 18rem">
+  <div class="card-body">
+    <h5 class="card-title"${data[i].name}</h5>
+    <h6 class="card-subtitle mb-2 text-muted"> Employee ID: ${data[i].id}</h6>
+    <a href='mailto:${data[i].email}'>Email: ${data[i].email}<a>
+     <p> Special ${data[i].special}</p>
+  </div>
+</div>
+
     
-</body>
+ </body>  
 </html>
 `;
 
 }
-}
 
 
+module.exports = employeeGenerator;
