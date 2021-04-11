@@ -242,24 +242,23 @@ function infoIntern() {
            default: false,
          },
        ])
-       .then((data) => {
-         if (data.addEmployee) {
-           typeOfEmployee()
-         } else {
-            const data = create(employee)
-            
-            
-            console.log(employee)
-            
-           fs.writeFile("./index.html", data, (err) => {
-             if (err) {
-               return;
-             } else {
-               console.log("Employee Document Generated");
-             }
-            })
-         }
-       });
+        .then((data) => {
+          if (data.addEmployee) {
+            typeOfEmployee();
+          } else {
+            const data = create(employee);
+
+            //console.log(employee);
+
+            fs.writeFile("./index.html", data, (err) => {
+              if (err) {
+                return;
+              } else {
+                console.log("Employee Document Generated");
+              }
+            });
+          }
+        });
    };
 
 //console.log(generalEmployee)
