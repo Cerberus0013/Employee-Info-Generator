@@ -242,8 +242,8 @@ function infoIntern() {
            default: false,
          },
        ])
-       .then((addEmployee) => {
-         if (!addEmployee) {
+       .then((data) => {
+         if (data.addEmployee) {
            typeOfEmployee()
          } else {
             const data = create(employee)
